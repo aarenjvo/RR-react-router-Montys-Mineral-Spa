@@ -1,4 +1,7 @@
+import React from 'react'
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
 
 import './App.css';
 
@@ -17,7 +20,28 @@ function App() {
       <header>
         <h1 className="title">Welcome to Monty's Mineral SPA</h1>
 
-        <div className="navBar">
+
+        <Container>
+        <Nav defaultActiveKey='/' variant='tabs' fill>
+          <Nav.Item>
+            <Nav.Link href='/'>
+              <Link to='/'>Home</Link>
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey={'aboutPage'}>
+              <Link to='/about'>About Us</Link>
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey={'packagesPage'}>
+              <Link to='/packages'>Our Packages</Link>
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
+      </Container>
+
+        {/* <div className="navBar">
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -29,7 +53,7 @@ function App() {
               <Link to="/packages">Our Packages</Link>
             </li>
           </ul>
-        </div>
+        </div> */}
 
       </header>
 
@@ -41,6 +65,26 @@ function App() {
         </Routes>
       </div>
       </Router>
+
+      {/* <Container>
+        <Nav defaultActiveKey='/' variant='tabs' fill>
+          <Nav.Item>
+            <Nav.Link href='/'>
+              <Link to='/'>Home</Link>
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey={'aboutPage'}>
+              <Link to='/about'>About Us</Link>
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey={'packagesPage'}>
+              <Link to='/packages'>Our Packages</Link>
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
+      </Container> */}
     </div>
   );
 }
